@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+    body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+    .w3-quarter img{margin-bottom: -6px; cursor: pointer}
+    .w3-quarter img:hover{opacity: 0.6; transition: 0.3s}
+
+</style>
+<body class="w3-light-grey">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-animate-right w3-top w3-text-light-grey w3-large" style="z-index:3;width:250px;font-weight:bold;display:none;right:0;" id="mySidebar">
+    <a href="javascript:void()" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-32">CLOSE</a>
+    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">PORTFOLIO</a>
+    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">ABOUT ME</a>
+    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">CONTACT</a>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-white w3-xlarge w3-padding-16">
+    <span class="w3-left w3-padding">MY LITTLE EXPERIMENTS</span>
+    <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-content" style="max-width:1600px;margin-top:83px">
+
+    <!-- Photo grid -->
+    <div class="w3-row w3-grayscale-min">
+        <div class="w3-quarter">
+            <div style="width: 300px;height: 300px; text-align: center;"
+                 onclick="onClick(this,'proof of existence using blockchain',
+                  'http://projects.koshikraj.com/poe/',
+                  'https://github.com/koshikraj/proof-of-existence')">
+                <img src="images/blockchain1.png" style="width:100%" onclick="onClick(this)" >
+                <p>proof of existence using blockchain</p>
+
+            </div>
+
+            <div style="width: 300px;height: 300px; text-align: center;"
+                 onclick="onClick(this,'cryptocurrency wallet',
+                  'http://projects.koshikraj.com/pynaivecoin/wallet',
+                  'https://github.com/koshikraj/pynaivechain')">
+                <img src="images/blockchain2.gif" style="width:100%" onclick="onClick(this)" >
+                <p>cryptocurrency wallet</p>
+
+            </div>
+        </div>
+
+        <div class="w3-quarter">
+            <div style="width: 300px;height: 300px; text-align: center;"
+                 onclick="onClick(this,'cryptocurrency explorer',
+                  'http://projects.koshikraj.com/pynaivecoin/explorer',
+                  'https://github.com/koshikraj/pynaivechain')">
+                <img src="images/blockchain1.png" style="width:100%" onclick="onClick(this)" >
+                <p>cryptocurrency explorer</p>
+
+            </div><div style="width: 300px;height: 300px; text-align: center;"
+                       onclick="onClick(this,'QR code authenticator',
+                        'http://projects.koshikraj.com/qrlogin',
+                        'https://github.com/koshikraj/QRlogin')">
+            <img src="images/auth.png" style="width:100%" onclick="onClick(this)" >
+            <p>QR code authenticator</p>
+
+        </div>
+        </div>
+
+        <div class="w3-quarter">
+            <div style="width: 300px;height: 300px; text-align: center;"
+                 onclick="onClick(this,'TBD',
+                  'http://projects.koshikraj.com/poe/')">
+                <img src="images/blue-coming-soon.png" style="width:100%" onclick="onClick(this)" >
+                <p>TBD</p>
+
+            </div>
+            <div style="width: 300px;height: 300px; text-align: center;"
+                 onclick="onClick(this,'TBD',
+                  'http://projects.koshikraj.com/poe/')">
+                <img src="images/blue-coming-soon.png" style="width:100%" onclick="onClick(this)" >
+                <p>TBD</p>
+
+            </div>
+        </div>
+
+        <div class="w3-quarter">
+            <div style="width: 300px;height: 300px; text-align: center;"
+                 onclick="onClick(this,'TBD', 'http://projects.koshikraj.com/poe/')">
+                <img src="images/blue-coming-soon.png" style="width:100%" onclick="onClick(this)" >
+                <p>TBD</p>
+
+            </div>
+            <div style="width: 300px;height: 300px; text-align: center;"
+                 onclick="onClick(this,'TBD', 'http://projects.koshikraj.com/poe/')">
+                <img src="images/blue-coming-soon.png" style="width:100%" onclick="onClick(this)" >
+                <p>TBD</p>
+
+            </div>
+       </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="w3-center w3-padding-32">
+        <div class="w3-bar">
+            <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+            <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+            <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+            <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+            <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+            <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+        </div>
+    </div>
+
+    <!-- Modal for full size images on click-->
+    <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+        <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
+        <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+            <img id="img01" class="w3-image" style="width: 50%">
+            <p id="caption"></p>
+            <a id="demo" href="" target="_blank">checkout demo</a>
+            <a id="source" href="" target="_blank">source code</a>
+        </div>
+    </div>
+
+    <!-- About section -->
+    <div class="w3-container w3-dark-grey w3-center w3-text-light-grey w3-padding-32" id="about">
+        <h4><b>About Me</b></h4>
+        <img src="images/cubing.jpeg" alt="Me" class="w3-image w3-padding-32" width="600" height="650">
+        <div class="w3-content w3-justify" style="max-width:600px">
+            <h4>Koshik Raj</h4>
+            <p>
+                Being a programming enthusiast, learning new technologies and trying to implement it to simplify life is my hobby.
+                Although every technological concepts excites me, I have special interest in few topics.
+            <ul>
+                <li> Computer networks</li>
+                <li> Information Security & Cryptography</li>
+                <li>  Discrete mathematics & Graph theory</li>
+                <li> Algorithm analyisis & Clean programming</li>
+            </ul>
+            After completing my bachelors in computer science, I went on to complete my masters in <b>information
+            Security</b> due to my passion in computer security. Bitcoin got my attention due to its implementation to achieve decentralized money.
+            Involved in cryptocurrency trading initially. Soon gained interest in the the cryptocurrency and the underlying technology and spent most of the
+            time exploring this technology. Currently I'm exploring blockchain technology and writing a book titled
+            <a href="https://www.packtpub.com/big-data-and-business-intelligence/foundations-blockchain" target="_blank">Foundations of Blockchain</a>.
+
+            </p>
+            <p>mail: koshik.raj@gmail.com</p>
+            <p>tel: 9900589280</p>
+            <hr class="w3-opacity">
+            <h4 class="w3-padding-16">Technical Skills</h4>
+            <p class="w3-wide">Information Security and Cryptography</p>
+            <div class="w3-white">
+                <div class="w3-container w3-padding-small w3-center w3-grey" style="width:80%">80%</div>
+            </div>
+            <p class="w3-wide">DevOps</p>
+            <div class="w3-white">
+                <div class="w3-container w3-padding-small w3-center w3-grey" style="width:85%">85%</div>
+            </div>
+            <p class="w3-wide">Web app development ReactJS/ Other JS frameworks</p>
+            <div class="w3-white">
+                <div class="w3-container w3-padding-small w3-center w3-grey" style="width:70%">70%</div>
+            </div>
+            <p class="w3-wide">Backend app development Python/PHP/C#</p>
+            <div class="w3-white">
+                <div class="w3-container w3-padding-small w3-center w3-grey" style="width:80%">80%</div>
+            </div>
+            <p class="w3-wide">Mobile App development - React native</p>
+            <div class="w3-white">
+                <div class="w3-container w3-padding-small w3-center w3-grey" style="width:60%">60%</div>
+            </div>
+            <p><button class="w3-button w3-light-grey w3-padding-large w3-margin-top w3-margin-bottom w3-hover-black">Download Resume</button></p>
+            <hr class="w3-opacity">
+
+
+        </div>
+    </div>
+
+    <!-- Contact section -->
+    <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="contact">
+        <div class="w3-content" style="max-width:600px">
+            <h4 class="w3-center"><b>Contact Me</b></h4>
+            <p>Do you want me to photograph you? Fill out the form and fill me in with the details :) I love meeting new people!</p>
+            <form action="/action_page.php" target="_blank">
+                <div class="w3-section">
+                    <label>Name</label>
+                    <input class="w3-input w3-border" type="text" name="Name" required>
+                </div>
+                <div class="w3-section">
+                    <label>Email</label>
+                    <input class="w3-input w3-border" type="text" name="Email" required>
+                </div>
+                <div class="w3-section">
+                    <label>Message</label>
+                    <input class="w3-input w3-border" type="text" name="Message" required>
+                </div>
+                <button type="submit" class="w3-button w3-block w3-black w3-margin-bottom">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-32 w3-grey">
+        <div class="w3-row-padding">
+            <div class="w3-third">
+                <h3>INFO</h3>
+                <p>Will update!</p>
+            </div>
+
+            <div class="w3-third">
+                <h3>BLOG POSTS</h3>
+                <ul class="w3-ul">
+                    <li class="w3-padding-16 w3-hover-black">
+                        <img src="https://www.w3schools.com/w3images/workshop.jpg" class="w3-left w3-margin-right" style="width:50px">
+                        <a href="https://medium.com/breaking-the-blockchain/what-are-alternate-coins-and-tokens-3a16859fa6c">
+                            What are alternate coins and tokens ?
+                        </a>
+                    </li>
+                    <li class="w3-padding-16 w3-hover-black">
+                        <img src="https://www.w3schools.com/w3images/gondol.jpg" class="w3-left w3-margin-right" style="width:50px">
+                        <a href="https://medium.com/breaking-the-blockchain/why-is-mining-required-to-create-a-blockchain-37a6b9cbd15b">
+                            Why is mining required to create a blockchain ?
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="w3-third">
+                <h3>POPULAR TAGS</h3>
+                <p>
+                    <span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">New York</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">London</span>
+                    <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">IKEA</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">NORWAY</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">DIY</span>
+                    <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Ideas</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Baby</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Family</span>
+                    <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">News</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Clothing</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Shopping</span>
+                    <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Sports</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Games</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="w3-black w3-center w3-padding-24">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></div>
+
+    <!-- End page content -->
+</div>
+
+<script>
+    // Script to open and close sidebar
+    function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("myOverlay").style.display = "block";
+    }
+
+    function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("myOverlay").style.display = "none";
+    }
+
+    // Modal Image Gallery
+    function onClick(element, detail, demo, source) {
+        document.getElementById("img01").src = element.childNodes[1].src;
+        document.getElementById("modal01").style.display = "block";
+        var captionText = document.getElementById("caption");
+        var demoLink = document.getElementById("demo");
+        var sourceLink = document.getElementById("source");
+        captionText.innerHTML = detail;
+        demoLink.href = demo;
+        sourceLink.href = source;
+    }
+
+</script>
+
+
+</body>
+</html>
